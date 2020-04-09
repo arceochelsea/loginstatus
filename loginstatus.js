@@ -1,7 +1,7 @@
 // object, properties, methods (functions), end of object, function (with parameters),  
 
 let logInInfo = {
-    currentUserNamez: "",
+    currentUserName: "",
     currentEmail: "",
     userNamesLoggedIn: [],
     emailsLoggedIn: [],
@@ -10,13 +10,28 @@ let logInInfo = {
     logIn: function() {
         this.userNamesLoggedIn.push(this.currentUserName);
         this.emailsLoggedIn.push(this.currentEmail);
-        console.log(`Welcome ${this.currentUserName[i]}!`);
-        console.log(`You have successfully logged in with your email ${this.currentEmail[i]}!`);
+        console.log(`Welcome ${this.currentUserName}!`);
+        console.log(`You have successfully logged in with your email ${this.currentEmail}!`);
     },
     logOut: function () {
         this.userNamesLoggedOut.push(this.currentUserName);
         this.emailsLoggedOut.push(this.currentEmail);
-        console.log(`Farewell ${this.currentUserName[i]}!`);
-        console.log(`You have successfully logged out with your email ${this.currentEmail[i]}!`);
+        console.log(`Farewell ${this.currentUserName}!`);
+        console.log(`You have successfully logged out with your email ${this.currentEmail}!`);
     }
-},
+};
+
+function checkLogIn (username, email, status) {
+    logInInfo.currentUserName = username;
+    logInInfo.currentEmail = email;
+    if (status == 'in') {
+    logInInfo.logIn();
+} else if (status == 'out') {
+    logInInfo.logOut();
+}
+}
+checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'in');
+checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'out');
+
+
+
