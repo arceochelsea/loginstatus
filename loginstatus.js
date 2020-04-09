@@ -32,6 +32,8 @@ function checkLogIn (username, email, status) {
 }
 checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'in');
 checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'out');
+checkLogIn('username2', 'pretendEmail2@gmail.com', 'in');
+checkLogIn('username2', 'pretendEmail2@gmail.com', 'out');
 
 
 
