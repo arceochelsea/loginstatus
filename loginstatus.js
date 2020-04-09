@@ -12,6 +12,8 @@ let logInInfo = {
         this.emailsLoggedIn.push(this.currentEmail);
         console.log(`Welcome ${this.currentUserName}!`);
         console.log(`You have successfully logged in with your email ${this.currentEmail}!`);
+        this.splice(this.indexof(this.currentUserName), 1);
+        this.splice(this.indexof(this.currentEmail), 1);
     },
     logOut: function () {
         this.userNamesLoggedOut.push(this.currentUserName);
