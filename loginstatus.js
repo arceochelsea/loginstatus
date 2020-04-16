@@ -8,16 +8,20 @@ let logInInfo = {
     userNamesLoggedOut: [],
     emailsLoggedOut: [],
     logIn: function() {
+        if (this.emailsLoggedIn.includes (this.currentEmail)) {
+            console.log(`:::WARNING ${this.currentUserName} ALREADY LOGGED IN!:::`)
+        } else 
         this.userNamesLoggedIn.push(this.currentUserName);
         this.emailsLoggedIn.push(this.currentEmail);
         console.log(`Welcome ${this.currentUserName}!`);
         console.log(`You have successfully logged in with your email ${this.currentEmail}!`);
-        this.splice(this.indexof(this.currentUserName), 1);
-        this.splice(this.indexof(this.currentEmail), 1);
     },
     logOut: function () {
-        this.userNamesLoggedOut.push(this.currentUserName);
-        this.emailsLoggedOut.push(this.currentEmail);
+        //if (this.emailsLoggedOut.includes (this.currentEmail)) {
+          //  console.log(`:::WARNING ${this.currentUserName} DID NOT LOG IN!:::`);
+        //} else
+        this.emailsLoggedOut.push(this.emailsLoggedIn.splice(this.emailsLoggedIn.indexOf(this.currentEmail), 1 ).pop()); 
+        this.userNamesLoggedOut.push(this.userNamesLoggedIn.splice(this.userNamesLoggedIn.indexOf(this.currentUserName), 1 ).pop());
         console.log(`Farewell ${this.currentUserName}!`);
         console.log(`You have successfully logged out with your email ${this.currentEmail}!`);
     }
@@ -36,6 +40,9 @@ checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'in');
 checkLogIn('chelsearceo', 'myPretendEmail@email.com', 'out');
 checkLogIn('username2', 'pretendEmail2@gmail.com', 'in');
 checkLogIn('username2', 'pretendEmail2@gmail.com', 'out');
+checkLogIn('UN3', 'PEmail3@gmail.com', 'out');
+
+
 
 
 
